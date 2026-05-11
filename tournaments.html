@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournaments - Chill Guys XI</title>
+    <meta name="description" content="Current tournament and match highlights.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Chill Guys XI</a>
+        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="members.html">Members</a>
+            <a href="tournaments.html" class="active">Tournaments</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="about.html">About Us</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <h2 class="section-title">Current Matches</h2>
+        <div id="matchesGrid" class="matches-grid">
+            <!-- Dynamically populated via JS -->
+        </div>
+
+        <h2 class="section-title">Tournament Standings</h2>
+        <div class="table-container">
+            <table class="standings-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Team</th>
+                        <th>Played</th>
+                        <th>Won</th>
+                        <th>Drawn</th>
+                        <th>Lost</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody id="standingsBody">
+                    <!-- Dynamically populated via JS -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Chill Guys XI. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

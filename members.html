@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members - Chill Guys XI</title>
+    <meta name="description" content="View the complete player roster for Chill Guys XI.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Chill Guys XI</a>
+        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="members.html" class="active">Members</a>
+            <a href="tournaments.html">Tournaments</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="about.html">About Us</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title">Club Members</h2>
+        
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search player by name...">
+            <select id="teamFilter" class="filter-select">
+                <option value="all">All Teams</option>
+                <option value="ayon">Team Ayon</option>
+                <option value="mahin">Team Mahin</option>
+                <option value="aashiq">Team Aashiq</option>
+                <option value="rayhan">Team Rayhan</option>
+            </select>
+        </div>
+
+        <div id="profilesGrid" class="profiles-grid">
+            <!-- Dynamically populated via JS -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Chill Guys XI. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
