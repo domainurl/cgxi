@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderPlayers = (playersData) => {
         const grid = document.getElementById('profilesGrid');
         if (!grid) return;
-        
+
         grid.innerHTML = '';
         if (playersData.length === 0) {
             grid.innerHTML = '<p style="text-align:center; grid-column:1/-1;">No players found.</p>';
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleFilter = () => {
         const searchInput = document.getElementById('searchInput');
         const teamFilter = document.getElementById('teamFilter');
-        
+
         if (!searchInput || !teamFilter) return;
 
         const searchTerm = searchInput.value.toLowerCase();
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </ul>
                         <div style="background: rgba(0, 240, 255, 0.1); padding: 1rem; border-radius: 8px; text-align: center;">
                             <div style="font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem;">Score: Team Ayon 1️⃣ 🆚 4️⃣ Team Rayhan</div>
-                            <div style="color: var(--accent-purple); font-weight: 600;">Man of the match: Anwar</div>
+                            <div style="color: var(--accent-cyan); font-weight: 1000;">Man of the match: Anwar</div>
                         </div>
                     </div>
 
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </ul>
                         <div style="background: rgba(0, 240, 255, 0.1); padding: 1rem; border-radius: 8px; text-align: center;">
                             <div style="font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem;">Score: Team Ashiq 1️⃣ 🆚 3️⃣ Team Mahin</div>
-                            <div style="color: var(--accent-purple); font-weight: 600;">Man of the match: Tanvir</div>
+                            <div style="color: var(--accent-cyan); font-weight: 1000;">Man of the match: Tanvir</div>
                         </div>
                     </div>
                 </div>
