@@ -68,22 +68,22 @@ const players = rawPlayers.map((player, index) => {
 });
 
 const getTeamStats = () => {
-    return teams.map(team => {
-        const teamPlayers = players.filter(p => p.teamId === team.id);
-        const totalMatches = teamPlayers.reduce((sum, p) => sum + p.matches, 0);
-        const totalWins = teamPlayers.reduce((sum, p) => sum + p.wins, 0);
-        const totalLosses = teamPlayers.reduce((sum, p) => sum + p.losses, 0);
-        const totalDraws = teamPlayers.reduce((sum, p) => sum + p.draws, 0);
-        const points = (totalWins * 3) + (totalDraws * 1);
-        
-        return {
-            ...team,
-            playersCount: teamPlayers.length,
-            matches: totalMatches,
-            wins: totalWins,
-            losses: totalLosses,
-            draws: totalDraws,
-            points: points
-        };
-    }).sort((a, b) => b.points - a.points);
+    return [
+        {
+            id: 'rayhan', name: 'Team Rayhan', logo: 'assets/avatar.png',
+            matches: 1, wins: 1, draws: 0, losses: 0, goalsFor: 4, goalsAgainst: 1, goalDiff: '+3', points: 3
+        },
+        {
+            id: 'mahin', name: 'Team Mahin', logo: 'assets/avatar.png',
+            matches: 1, wins: 1, draws: 0, losses: 0, goalsFor: 3, goalsAgainst: 1, goalDiff: '+2', points: 3
+        },
+        {
+            id: 'aashiq', name: 'Team Aashiq', logo: 'assets/avatar.png',
+            matches: 1, wins: 0, draws: 0, losses: 1, goalsFor: 1, goalsAgainst: 3, goalDiff: '-2', points: 0
+        },
+        {
+            id: 'ayon', name: 'Team E.k Ayon', logo: 'assets/avatar.png',
+            matches: 1, wins: 0, draws: 0, losses: 1, goalsFor: 1, goalsAgainst: 4, goalDiff: '-3', points: 0
+        }
+    ];
 };

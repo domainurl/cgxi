@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         teamStats.forEach((team, index) => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td>#${index + 1}</td>
+                <td>${index + 1}</td>
                 <td>
                     <div class="team-cell">
                         <img src="${team.logo}" alt="${team.name}" class="team-logo-small">
@@ -83,6 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${team.wins}</td>
                 <td>${team.draws}</td>
                 <td>${team.losses}</td>
+                <td>${team.goalsFor}:${team.goalsAgainst}</td>
+                <td>${team.goalDiff}</td>
                 <td class="pts">${team.points}</td>
             `;
             tbody.appendChild(tr);
@@ -94,34 +96,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const grid = document.getElementById('matchesGrid');
         if (!grid) return;
 
-        // Create some mock matches based on teams
-        const mockMatches = [
-            { team1: teams[0], team2: teams[1], score1: 3, score2: 2, status: 'Completed', class: 'status-completed' },
-            { team1: teams[2], team2: teams[3], score1: 1, score2: 1, status: 'Live', class: 'status-live' },
-            { team1: teams[0], team2: teams[2], score1: '-', score2: '-', status: 'Upcoming', class: 'status-upcoming' },
-            { team1: teams[1], team2: teams[3], score1: '-', score2: '-', status: 'Upcoming', class: 'status-upcoming' },
-        ];
+        grid.innerHTML = `
+            <div class="match-day-card" style="grid-column: 1 / -1; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border-color); padding: 2rem;">
+                <h3 style="text-align: center; color: var(--accent-cyan); margin-bottom: 2rem; font-size: 1.5rem;">🔴 Match Day - 03 🔴</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="fixture-card" style="background: var(--bg-card); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                        <div style="text-align: center; font-weight: 800; margin-bottom: 1.5rem; color: #fff; background: rgba(0, 240, 255, 0.1); padding: 0.5rem; border-radius: 4px;">🟩 Team Ayon(A) 🆚 Team Mahin(H) 🟩</div>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>1. Araf</span> <span>🆚</span> <span>Rinku</span></li>
+                            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>2. Jobaer</span> <span>🆚</span> <span>Morsalin</span></li>
+                            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>3. Elias</span> <span>🆚</span> <span>Biplob</span></li>
+                            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>4. Tushar</span> <span>🆚</span> <span>Mahin</span></li>
+                            <li style="padding: 0.8rem 0; display: flex; justify-content: space-between;"><span>5. Shanto</span> <span>🆚</span> <span>Tanvir</span></li>
+                        </ul>
+                    </div>
 
-        grid.innerHTML = '';
-        mockMatches.forEach(match => {
-            const card = document.createElement('div');
-            card.className = 'match-card';
-            card.innerHTML = `
-                <div class="match-team">
-                    <img src="${match.team1.logo}" alt="${match.team1.name}">
-                    <span>${match.team1.name}</span>
+                    <div class="fixture-card" style="background: var(--bg-card); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                        <div style="text-align: center; font-weight: 800; margin-bottom: 1.5rem; color: #fff; background: rgba(0, 240, 255, 0.1); padding: 0.5rem; border-radius: 4px;">🟩 Team Aashiq(H) 🆚 Team Rayhan(A) 🟩</div>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>1. Asraful</span> <span>🆚</span> <span>Avas</span></li>
+                            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>2. Tahsin</span> <span>🆚</span> <span>Sagor</span></li>
+                            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>3. Aashiq</span> <span>🆚</span> <span>Anwar</span></li>
+                            <li style="padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>4. Mahabub</span> <span>🆚</span> <span>Sabbir</span></li>
+                            <li style="padding: 0.8rem 0; display: flex; justify-content: space-between;"><span>5. Shahrier</span> <span>🆚</span> <span>Bappy</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="match-score">
-                    <div class="status-badge ${match.class}">${match.status}</div>
-                    ${match.score1} - ${match.score2}
-                </div>
-                <div class="match-team">
-                    <img src="${match.team2.logo}" alt="${match.team2.name}">
-                    <span>${match.team2.name}</span>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
+            </div>
+        `;
     };
 
     // Initialize Pages

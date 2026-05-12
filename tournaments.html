@@ -21,7 +21,22 @@
     </nav>
 
     <main class="container">
-        
+        <div class="match-settings-card">
+            <h2 class="settings-title">⚙️ Match Settings</h2>
+            <ul class="settings-list">
+                <li>1. 8 min + Normal</li>
+                <li>2. Extra time, Extra Sub, PK: Off</li>
+            </ul>
+            <div class="deadline-banner">🔺Deadline: Wednesday 11:59 pm🔺</div>
+            
+            <h2 class="settings-title" style="margin-top: 1.5rem;">🔥 Rules 🔥</h2>
+            <ul class="settings-list">
+                <li>1️⃣ ম্যাচ শেষে রেজাল্টের স্ক্রিনশট দিয়ে,স্কোর আপডেট করে দিবেন।</li>
+                <li>2️⃣ নিজের স্কোর নিজের নামের পাশে লিখবেন।</li>
+                <li>3️⃣ Captain প্রতি ম্যাচে সর্বোচ্চ একজনকে Sub করতে পারবে।</li>
+            </ul>
+        </div>
+
         <h2 class="section-title">Current Matches</h2>
         <div id="matchesGrid" class="matches-grid">
             <!-- Dynamically populated via JS -->
@@ -32,13 +47,15 @@
             <table class="standings-table">
                 <thead>
                     <tr>
-                        <th>Rank</th>
-                        <th>Team</th>
-                        <th>Played</th>
-                        <th>Won</th>
-                        <th>Drawn</th>
-                        <th>Lost</th>
-                        <th>Points</th>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>P</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>+/-</th>
+                        <th>Dif</th>
+                        <th>Pts</th>
                     </tr>
                 </thead>
                 <tbody id="standingsBody">
